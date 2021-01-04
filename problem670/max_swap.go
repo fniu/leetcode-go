@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-// SortedList binary tree
+// SortedList is a linked list to store the bytes of the given integer in order.
 type SortedList struct {
 	Val    byte
 	Index  int
