@@ -13,7 +13,7 @@ type SortedList struct {
 }
 
 func maximumSwap(num int) int {
-	if num < 10 {
+	if num <= 11 {
 		return num
 	}
 	if num < 100 {
