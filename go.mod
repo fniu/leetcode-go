@@ -1,3 +1,3 @@
-module github.com/fniu/leetcode-answers
+module github.com/fniu/leetcode-go
 
-go 1.15
+go 1.18
