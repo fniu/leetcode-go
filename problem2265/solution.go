@@ -17,7 +17,6 @@ type TreeNode struct {
  * }
  */
 
-/*
 var globalRes = 0
 
 func averageOfSubtree(root *TreeNode) int {
@@ -29,31 +28,20 @@ func averageOfSubtree(root *TreeNode) int {
 	return globalRes
 }
 
-type NodeInfo struct {
-	num, sum int
-}
-
-func sumOfSubtree(root *TreeNode) *NodeInfo {
-
-	ni := &NodeInfo{1, root.Val}
-	var nic *NodeInfo
-	if root.Left != nil {
-		nic = sumOfSubtree(root.Left)
-		ni.num += nic.num
-		ni.sum += nic.sum
+func sumOfSubtree(root *TreeNode) (int, int) {
+	if root == nil {
+		return 0, 0
 	}
-	if root.Right != nil {
-		nic = sumOfSubtree(root.Right)
-		ni.num += nic.num
-		ni.sum += nic.sum
-	}
-	if ni.sum/ni.num == root.Val {
+	a, b := sumOfSubtree(root.Left)
+	a2, b2 := sumOfSubtree(root.Right)
+
+	if (root.Val+a+a2)/(1+b+b2) == root.Val {
 		globalRes += 1
 	}
-	return ni
+	return root.Val + a + a2, 1 + b + b2
 }
-*/
 
+/*
 func sumCount(root *TreeNode) (int, int) {
 	if root == nil {
 		return 0, 0
@@ -77,7 +65,7 @@ func averageOfSubtree(root *TreeNode) int {
 	}
 	return result
 }
-
+*/
 // Non-recursive
 func treeFromList(l []int) TreeNode {
 
