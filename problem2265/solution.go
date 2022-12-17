@@ -2,8 +2,6 @@
 
 package problem2265
 
-import "math"
-
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
@@ -18,7 +16,7 @@ type TreeNode struct {
  *     Right *TreeNode
  * }
  */
-
+/*
 var globalRes = 0
 
 func averageOfSubtree(root *TreeNode) int {
@@ -52,6 +50,34 @@ func sumOfSubtree(root *TreeNode) *NodeInfo {
 		globalRes += 1
 	}
 	return ni
+}
+*/
+
+func sum(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	return root.Val + sum(root.Left) + sum(root.Right)
+}
+func count(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	return 1 + count(root.Left) + count(root.Right)
+}
+
+func averageOfSubtree(root *TreeNode) int {
+	var result int
+
+	if root == nil {
+		return 0
+	}
+
+	result = averageOfSubtree(root.Left) + averageOfSubtree(root.Right)
+	if (sum(root) / count(root)) == root.Val {
+		return result + 1
+	}
+	return result
 }
 
 // Non-recursive
