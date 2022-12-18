@@ -13,7 +13,7 @@ func Test_validSubarraySize(t *testing.T) {
 		want int
 	}{
 		// TODO: Add test cases.
-		{"example 0", args{[]int{3, 3, 3, 3, 3}, 4}, 3},
+		{"example 0", args{[]int{3, 3, 3, 3, 3}, 4}, 2},
 		{"example 1", args{[]int{1, 3, 4, 3, 1}, 6}, 3},
 		{"example 2", args{[]int{6, 5, 6, 5, 8}, 7}, 1},
 	}
