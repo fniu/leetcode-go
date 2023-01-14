@@ -37,8 +37,6 @@ func inOrderTraverse(root *TreeNode, s *int, k int) int {
 	if root.Right != nil {
 		val = inOrderTraverse(root.Right, s, k)
 	}
-	if val != 0 {
-		return val
-	}
-	return 0
+
+	return val
 }
